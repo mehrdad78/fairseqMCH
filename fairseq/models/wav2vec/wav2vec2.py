@@ -63,7 +63,7 @@ class Wav2Vec2Config(FairseqDataclass):
         default=12, metadata={"help": "num encoder attention heads"}
     )
     activation_fn: ChoiceEnum(utils.get_available_activation_fns()) = field(
-        default="relu", metadata={"help": "activation function to use"}
+        default="gelu_accurate", metadata={"help": "activation function to use"}
     )
     layer_type: LAYER_TYPE_CHOICES = field(
         default="transformer", metadata={"help": "layer type in encoder"}
