@@ -51,7 +51,7 @@ class Wav2Vec2Config(FairseqDataclass):
         },
     )
     encoder_layers: int = field(
-        default=6, metadata={"help": "num encoder layers in the transformer"}
+        default=12, metadata={"help": "num encoder layers in the transformer"}
     )
     encoder_embed_dim: int = field(
         default=768, metadata={"help": "encoder embedding dimension"}
@@ -63,7 +63,7 @@ class Wav2Vec2Config(FairseqDataclass):
         default=12, metadata={"help": "num encoder attention heads"}
     )
     activation_fn: ChoiceEnum(utils.get_available_activation_fns()) = field(
-        default="linear", metadata={"help": "activation function to use"}
+        default="gelu", metadata={"help": "activation function to use"}
     )
     layer_type: LAYER_TYPE_CHOICES = field(
         default="transformer", metadata={"help": "layer type in encoder"}
